@@ -1,0 +1,167 @@
+/* ==========================================================================
+   SANDAMAN CONSTRUCTIONS — Design System
+   Palette: industrial forest green + safety yellow, concrete paper ground
+   Type: Archivo Expanded (display) / Inter (body) / IBM Plex Mono (data)
+   ========================================================================== */
+
+:root{
+  /* --- Color tokens --- */
+  --ink:        #142219;   /* near-black green, primary text */
+  --forest:     #1B3A2B;   /* primary dark green */
+  --forest-2:   #2F5B41;   /* mid green */
+  --forest-3:   #3E7554;   /* lighter green, hovers */
+  --yellow:     #F5B700;   /* safety yellow, primary accent */
+  --yellow-deep:#C98F00;   /* deep yellow, hover/shade */
+  --paper:      #F6F3EA;   /* concrete/paper background */
+  --paper-2:    #EFEADA;   /* slightly deeper paper for cards */
+  --steel:      #767C6F;   /* muted secondary text on paper */
+  --steel-light:#AEB3A3;   /* faint text on dark */
+  --line:       #DBD5C2;   /* hairline border on paper */
+  --line-dark:  rgba(246,243,234,0.14); /* hairline border on dark */
+  --white:      #FFFFFF;
+
+  /* --- Type --- */
+  --f-display: 'Archivo Expanded', 'Arial Narrow', sans-serif;
+  --f-body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --f-mono:    'IBM Plex Mono', 'SFMono-Regular', monospace;
+
+  /* --- Scale / rhythm --- */
+  --gutter: clamp(20px, 5vw, 64px);
+  --radius: 3px;
+  --ease: cubic-bezier(.22,.61,.36,1);
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--f-body);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+ul{ margin:0; padding:0; list-style:none; }
+button{ font-family:inherit; cursor:pointer; }
+input,textarea,select{ font-family:inherit; font-size:1rem; }
+
+h1,h2,h3,h4{
+  font-family:var(--f-display);
+  font-weight:700;
+  line-height:1.05;
+  letter-spacing:-0.01em;
+  margin:0 0 .5em;
+  text-transform:uppercase;
+}
+h1{ font-size:clamp(2.6rem, 6vw, 5rem); }
+h2{ font-size:clamp(1.9rem, 3.6vw, 3rem); }
+h3{ font-size:clamp(1.2rem, 2vw, 1.6rem); }
+p{ margin:0 0 1em; color:var(--steel); max-width:60ch; }
+.on-dark p{ color:var(--steel-light); }
+
+:focus-visible{
+  outline:3px solid var(--yellow);
+  outline-offset:2px;
+}
+
+.container{
+  max-width:1280px;
+  margin:0 auto;
+  padding:0 var(--gutter);
+}
+
+.eyebrow{
+  font-family:var(--f-mono);
+  font-size:.72rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--forest-3);
+  display:flex;
+  align-items:center;
+  gap:.6em;
+  margin-bottom:1em;
+}
+.on-dark .eyebrow{ color:var(--yellow); }
+.eyebrow::before{
+  content:'';
+  width:28px; height:2px;
+  background:var(--yellow);
+  display:inline-block;
+}
+
+/* --- Buttons --- */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:.6em;
+  padding:.95em 1.8em;
+  font-family:var(--f-mono);
+  font-size:.82rem;
+  font-weight:500;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  border:2px solid transparent;
+  border-radius:var(--radius);
+  transition:background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease), transform .2s var(--ease);
+  white-space:nowrap;
+}
+.btn-primary{ background:var(--yellow); color:var(--ink); }
+.btn-primary:hover{ background:var(--yellow-deep); transform:translateY(-2px); }
+.btn-outline{ border-color:var(--ink); color:var(--ink); }
+.btn-outline:hover{ background:var(--ink); color:var(--paper); }
+.btn-outline.on-dark{ border-color:var(--paper); color:var(--paper); }
+.btn-outline.on-dark:hover{ background:var(--paper); color:var(--ink); }
+.btn-arrow{ transition:transform .25s var(--ease); }
+.btn:hover .btn-arrow{ transform:translateX(4px); }
+
+/* --- Section rhythm --- */
+.section{ padding:clamp(56px,9vw,120px) 0; }
+.section-tight{ padding:clamp(40px,6vw,72px) 0; }
+.on-forest{ background:var(--forest); color:var(--paper); }
+.on-ink{ background:var(--ink); color:var(--paper); }
+
+/* --- Signature diagonal divider (site-cut / grade line motif) --- */
+.grade-divider{
+  position:relative;
+  height:64px;
+  overflow:hidden;
+}
+.grade-divider svg{ width:100%; height:100%; display:block; }
+
+/* thin two-tone stripe rule, used sparingly as a section marker */
+.stripe-rule{
+  height:6px;
+  width:100%;
+  background:repeating-linear-gradient(
+    -45deg,
+    var(--yellow) 0 18px,
+    var(--forest) 18px 36px
+  );
+}
+
+/* --- Blueprint grid ambient texture --- */
+.blueprint-bg{
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(var(--line-dark) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-dark) 1px, transparent 1px);
+  background-size:42px 42px;
+  opacity:.5;
+  pointer-events:none;
+}
+
+/* --- Utility --- */
+.muted{ color:var(--steel); }
+.center{ text-align:center; margin-left:auto; margin-right:auto; }
+.visually-hidden{
+  position:absolute; width:1px; height:1px; overflow:hidden;
+  clip:rect(0 0 0 0); white-space:nowrap;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
+}
