@@ -99,14 +99,43 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* --- Contact form (client-side only placeholder) --- */
+  /* --- Contact form (AJAX submission) --- */
   var form = document.getElementById('contact-form');
   if (form){
     form.addEventListener('submit', function(e){
       e.preventDefault();
-      var success = document.querySelector('.form-success');
-      if (success) success.classList.add('is-visible');
-      form.reset();
+      var submitBtn = form.querySelector('button[type="submit"]');
+      var originalBtnText = submitBtn.innerHTML;
+      submitBtn.innerHTML = 'Submitting...';
+      submitBtn.disabled = true;
+
+      var formData = new FormData(form);
+
+      fetch('api/submit_contact.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          var success = document.querySelector('.form-success');
+          if (success) {
+            success.querySelector('span').textContent = data.message;
+            success.classList.add('is-visible');
+          }
+          form.reset();
+        } else {
+          alert('Error: ' + data.message);
+        }
+      })
+      .catch(error => {
+        alert('An error occurred. Please try again.');
+        console.error(error);
+      })
+      .finally(() => {
+        submitBtn.innerHTML = originalBtnText;
+        submitBtn.disabled = false;
+      });
     });
   }
 
