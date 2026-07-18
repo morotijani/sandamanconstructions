@@ -2,453 +2,428 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Team — Sandaman Constructions</title>
-  <meta name="description"
-    content="Meet the leadership, engineers, site staff and support team behind Sandaman Constructions' road, building and civil engineering projects across Ghana.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css">
-  <style>
-    .leader-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 28px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team — Sandaman Constructions</title>
+    <meta name="description"
+        content="Meet the leadership, engineers, site staff and support team behind Sandaman Constructions' road, building and civil engineering projects across Ghana.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <style>
+        .leader-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+        }
 
-    .leader-card .team-photo {
-      margin-bottom: 1.1em;
-    }
+        .leader-card .team-photo {
+            margin-bottom: 1.1em;
+        }
 
-    .leader-card p.bio {
-      font-size: .86rem;
-      margin-top: .6em;
-    }
+        .leader-card p.bio {
+            font-size: .86rem;
+            margin-top: .6em;
+        }
 
-    @media (max-width:960px) {
-      .leader-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
+        @media (max-width:960px) {
+            .leader-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
 
-    @media (max-width:560px) {
-      .leader-grid {
-        grid-template-columns: 1fr;
-      }
-    }
+        @media (max-width:560px) {
+            .leader-grid {
+                grid-template-columns: 1fr;
+            }
+        }
 
-    .dept-tag {
-      display: inline-block;
-      margin-top: .5em;
-      font-family: var(--f-mono);
-      font-size: .64rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--yellow);
-      background: var(--forest);
-      padding: .3em .7em;
-      border-radius: 2px;
-    }
+        .dept-tag {
+            display: inline-block;
+            margin-top: .5em;
+            font-family: var(--f-mono);
+            font-size: .64rem;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--yellow);
+            background: var(--forest);
+            padding: .3em .7em;
+            border-radius: 2px;
+        }
 
-    .on-forest .dept-tag,
-    .on-ink .dept-tag {
-      background: rgba(255, 255, 255, .08);
-    }
+        .on-forest .dept-tag,
+        .on-ink .dept-tag {
+            background: rgba(255, 255, 255, .08);
+        }
 
-    .join-strip {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      padding: 32px;
-      border: 1px dashed var(--line);
-      margin-top: 3rem;
-    }
+        .join-strip {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 32px;
+            border: 1px dashed var(--line);
+            margin-top: 3rem;
+        }
 
-    .join-strip h4 {
-      font-family: var(--f-body);
-      text-transform: none;
-      font-size: 1.1rem;
-      margin: 0 0 .3em;
-    }
+        .join-strip h4 {
+            font-family: var(--f-body);
+            text-transform: none;
+            font-size: 1.1rem;
+            margin: 0 0 .3em;
+        }
 
-    .join-strip p {
-      margin: 0;
-      max-width: 44ch;
-    }
-  </style>
+        .join-strip p {
+            margin: 0;
+            max-width: 44ch;
+        }
+    </style>
 </head>
 
 <body>
 
-  <!-- ============ HEADER ============ -->
-  <header class="site-header">
-    <div class="container">
-      <a href="index.html" class="logo">
-        <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="40" height="40" fill="#1B3A2B" />
-          <path d="M0 40L40 0V14L14 40H0Z" fill="#F5B700" />
-          <path d="M22 40L40 22V32L32 40H22Z" fill="#F5B700" />
-        </svg>
-        <span class="word">SANDAMAN<small>Constructions</small></span>
-      </a>
-      <nav>
-        <ul class="nav-list" id="nav-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="team.html" aria-current="page">Our Team</a></li>
-          <li><a href="sectors.html">Business Lines</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="nav-cta">
-        <a href="contact.html" class="btn btn-outline on-dark">Get a Quote</a>
-        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
-      </div>
-    </div>
-  </header>
+    <!-- ============ HEADER ============ -->
+    <header class="site-header">
+        <div class="container">
+            <a href="index" class="logo">
+                <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" fill="#1B3A2B" />
+                    <path d="M0 40L40 0V14L14 40H0Z" fill="#F5B700" />
+                    <path d="M22 40L40 22V32L32 40H22Z" fill="#F5B700" />
+                </svg>
+                <span class="word">SANDAMAN<small>Constructions</small></span>
+            </a>
+            <nav>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="index">Home</a></li>
+                    <li><a href="about">About Us</a></li>
+                    <li><a href="team" aria-current="page">Our Team</a></li>
+                    <li><a href="sectors">Business Lines</a></li>
+                    <li><a href="projects">Projects</a></li>
+                    <li><a href="contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-cta">
+                <a href="contact" class="btn btn-outline on-dark">Get a Quote</a>
+                <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+            </div>
+        </div>
+    </header>
 
-  <main>
-    <!-- ============ PAGE BANNER ============ -->
-    <section class="page-banner">
-      <div class="blueprint-bg"></div>
-      <div class="container">
-        <p class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span>Our Team</p>
-        <p class="eyebrow">The People Behind the Build</p>
-        <h1>Every Site Runs on Its Crew.</h1>
-        <p class="lead">Sandaman Constructions is built by engineers, site supervisors, plant operators and support
-          staff who stay on a project from mobilization to handover.</p>
-      </div>
-    </section>
+    <main>
+        <!-- ============ PAGE BANNER ============ -->
+        <section class="page-banner">
+            <div class="blueprint-bg"></div>
+            <div class="container">
+                <p class="breadcrumb"><a href="index">Home</a><span class="sep">/</span>Our Team</p>
+                <p class="eyebrow">The People Behind the Build</p>
+                <h1>Every Site Runs on Its Crew.</h1>
+                <p class="lead">Sandaman Constructions is built by engineers, site supervisors, plant operators and
+                    support
+                    staff who stay on a project from mobilization to handover.</p>
+            </div>
+        </section>
 
-    <!-- ============ LEADERSHIP ============ -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">Leadership</p>
-            <h2>Who Runs the Company</h2>
-          </div>
-          <p class="lead">Placeholder profiles — swap in real names, titles, headshots and bios when ready.</p>
-        </div>
-        <div class="leader-grid reveal">
-          <div class="team-card leader-card">
-            <div class="team-photo">
-              <div class="team-initials">K.A</div>
+        <!-- ============ LEADERSHIP ============ -->
+        <section class="section">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">Leadership</p>
+                        <h2>Who Runs the Company</h2>
+                    </div>
+                    <p class="lead">Placeholder profiles — swap in real names, titles, headshots and bios when ready.
+                    </p>
+                </div>
+                <div class="leader-grid reveal">
+                    <div class="team-card leader-card">
+                        <div class="team-photo">
+                            <div class="team-initials">U.A.R</div>
+                        </div>
+                        <h4>Umar Abdul Rauf</h4>
+                        <p class="team-role">Founder/Managing Director</p>
+                        <p class="bio">Founded the company in 2026. Twenty years in civil works before that, running
+                            road contracts
+                            for national contractors.</p>
+                    </div>
+                    <div class="team-card leader-card">
+                        <div class="team-photo">
+                            <div class="team-initials">A.W.U.S</div>
+                        </div>
+                        <h4>Abdul Wali Umar Sanda</h4>
+                        <p class="team-role">Head of Engineering</p>
+                        <p class="bio">Chartered civil engineer overseeing design sign-off and technical quality across
+                            every active
+                            site.</p>
+                    </div>
+                    <div class="team-card leader-card">
+                        <div class="team-photo">
+                            <div class="team-initials">M.M.H</div>
+                        </div>
+                        <h4>Mohammed Musah Hamza</h4>
+                        <p class="team-role">Operations Manager</p>
+                        <p class="bio">Coordinates plant, crews and materials across all four regions to keep programmes
+                            on
+                            schedule.</p>
+                    </div>
+                    <div class="team-card leader-card">
+                        <div class="team-photo">
+                            <div class="team-initials">F.A.M</div>
+                        </div>
+                        <h4>Faiza Ahmed Mohammed</h4>
+                        <p class="team-role">Head of Safety &amp; Compliance</p>
+                        <p class="bio">Runs the zero-harm programme and leads daily toolbox talks and site audits across
+                            all
+                            contracts.</p>
+                    </div>
+                </div>
             </div>
-            <h4>Kwame Asante</h4>
-            <p class="team-role">Managing Director</p>
-            <p class="bio">Founded the company in 2014. Twenty years in civil works before that, running road contracts
-              for national contractors.</p>
-          </div>
-          <div class="team-card leader-card">
-            <div class="team-photo">
-              <div class="team-initials">A.O</div>
-            </div>
-            <h4>Ama Owusu</h4>
-            <p class="team-role">Head of Engineering</p>
-            <p class="bio">Chartered civil engineer overseeing design sign-off and technical quality across every active
-              site.</p>
-          </div>
-          <div class="team-card leader-card">
-            <div class="team-photo">
-              <div class="team-initials">D.M</div>
-            </div>
-            <h4>Daniel Mensah</h4>
-            <p class="team-role">Operations Manager</p>
-            <p class="bio">Coordinates plant, crews and materials across all four regions to keep programmes on
-              schedule.</p>
-          </div>
-          <div class="team-card leader-card">
-            <div class="team-photo">
-              <div class="team-initials">E.B</div>
-            </div>
-            <h4>Esi Boateng</h4>
-            <p class="team-role">Head of Safety &amp; Compliance</p>
-            <p class="bio">Runs the zero-harm programme and leads daily toolbox talks and site audits across all
-              contracts.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- ============ FULL ROSTER ============ -->
-    <section class="section on-forest">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">The Wider Team</p>
-            <h2>Engineering, Site &amp; Support Staff</h2>
-          </div>
-          <p class="lead">180+ permanent staff and crew. A sample of the team is shown below, grouped by department.</p>
-        </div>
+        <!-- ============ FULL ROSTER ============ -->
+        <section class="section on-forest">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">The Wider Team</p>
+                        <h2>Engineering, Site &amp; Support Staff</h2>
+                    </div>
+                    <p class="lead">180+ permanent staff and crew. A sample of the team is shown below, grouped by
+                        department.</p>
+                </div>
 
-        <div class="filter-row reveal">
-          <button class="filter-btn is-active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="engineering">Engineering</button>
-          <button class="filter-btn" data-filter="operations">Operations</button>
-          <button class="filter-btn" data-filter="safety">Safety &amp; Quality</button>
-          <button class="filter-btn" data-filter="admin">Admin &amp; Finance</button>
-        </div>
+                <div class="filter-row reveal">
+                    <button class="filter-btn is-active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="engineering">Engineering</button>
+                    <button class="filter-btn" data-filter="operations">Operations</button>
+                    <button class="filter-btn" data-filter="safety">Safety &amp; Quality</button>
+                    <button class="filter-btn" data-filter="admin">Admin &amp; Finance</button>
+                </div>
 
-        <div class="team-grid reveal">
-          <div class="team-card" data-category="engineering">
-            <div class="team-photo">
-              <div class="team-initials">Y.A</div>
-            </div>
-            <h4>Yaw Adjei</h4>
-            <p class="team-role">Structural Engineer</p>
-            <span class="dept-tag">Engineering</span>
-          </div>
-          <div class="team-card" data-category="engineering">
-            <div class="team-photo">
-              <div class="team-initials">A.F</div>
-            </div>
-            <h4>Abena Frimpong</h4>
-            <p class="team-role">Civil Engineer</p>
-            <span class="dept-tag">Engineering</span>
-          </div>
-          <div class="team-card" data-category="engineering">
-            <div class="team-photo">
-              <div class="team-initials">K.A</div>
-            </div>
-            <h4>Kojo Antwi</h4>
-            <p class="team-role">Land Surveyor</p>
-            <span class="dept-tag">Engineering</span>
-          </div>
-          <div class="team-card" data-category="operations">
-            <div class="team-photo">
-              <div class="team-initials">N.Y</div>
-            </div>
-            <h4>Nana Yeboah</h4>
-            <p class="team-role">Site Supervisor</p>
-            <span class="dept-tag">Operations</span>
-          </div>
-          <div class="team-card" data-category="operations">
-            <div class="team-photo">
-              <div class="team-initials">K.O</div>
-            </div>
-            <h4>Kwabena Owusu</h4>
-            <p class="team-role">Plant Manager</p>
-            <span class="dept-tag">Operations</span>
-          </div>
-          <div class="team-card" data-category="operations">
-            <div class="team-photo">
-              <div class="team-initials">A.S</div>
-            </div>
-            <h4>Adjoa Sarpong</h4>
-            <p class="team-role">Logistics Coordinator</p>
-            <span class="dept-tag">Operations</span>
-          </div>
-          <div class="team-card" data-category="safety">
-            <div class="team-photo">
-              <div class="team-initials">F.N</div>
-            </div>
-            <h4>Fiifi Nkrumah</h4>
-            <p class="team-role">Safety Officer</p>
-            <span class="dept-tag">Safety &amp; Quality</span>
-          </div>
-          <div class="team-card" data-category="safety">
-            <div class="team-photo">
-              <div class="team-initials">A.D</div>
-            </div>
-            <h4>Akosua Darko</h4>
-            <p class="team-role">Quality Control Lead</p>
-            <span class="dept-tag">Safety &amp; Quality</span>
-          </div>
-          <div class="team-card" data-category="admin">
-            <div class="team-photo">
-              <div class="team-initials">E.A</div>
-            </div>
-            <h4>Efua Amponsah</h4>
-            <p class="team-role">Finance Manager</p>
-            <span class="dept-tag">Admin &amp; Finance</span>
-          </div>
-          <div class="team-card" data-category="admin">
-            <div class="team-photo">
-              <div class="team-initials">K.B</div>
-            </div>
-            <h4>Kwesi Boadi</h4>
-            <p class="team-role">HR Manager</p>
-            <span class="dept-tag">Admin &amp; Finance</span>
-          </div>
-          <div class="team-card" data-category="admin">
-            <div class="team-photo">
-              <div class="team-initials">A.T</div>
-            </div>
-            <h4>Abigail Tetteh</h4>
-            <p class="team-role">Procurement Officer</p>
-            <span class="dept-tag">Admin &amp; Finance</span>
-          </div>
-          <div class="team-card" data-category="admin">
-            <div class="team-photo">
-              <div class="team-initials">Y.O</div>
-            </div>
-            <h4>Yaw Owusu</h4>
-            <p class="team-role">Admin Officer</p>
-            <span class="dept-tag">Admin &amp; Finance</span>
-          </div>
-        </div>
+                <div class="team-grid reveal">
+                    <div class="team-card" data-category="operations">
+                        <div class="team-photo">
+                            <div class="team-initials">F.T</div>
+                        </div>
+                        <h4>Fauzi Tanko</h4>
+                        <p class="team-role">Site Supervisor</p>
+                        <span class="dept-tag">Operations</span>
+                    </div>
+                    <div class="team-card" data-category="operations">
+                        <div class="team-photo">
+                            <div class="team-initials">M.M.H</div>
+                        </div>
+                        <h4>Mohammed Musah Hamza</h4>
+                        <p class="team-role">Plant Manager</p>
+                        <span class="dept-tag">Operations</span>
+                    </div>
+                    <div class="team-card" data-category="operations">
+                        <div class="team-photo">
+                            <div class="team-initials">A</div>
+                        </div>
+                        <h4>Andy</h4>
+                        <p class="team-role">Logistics Coordinator</p>
+                        <span class="dept-tag">Operations</span>
+                    </div>
+                    <div class="team-card" data-category="admin">
+                        <div class="team-photo">
+                            <div class="team-initials">A.M.S</div>
+                        </div>
+                        <h4>Amina Maaku Sanda</h4>
+                        <p class="team-role">Finance Manager</p>
+                        <span class="dept-tag">Admin &amp; Finance</span>
+                    </div>
+                    <div class="team-card" data-category="admin">
+                        <div class="team-photo">
+                            <div class="team-initials">B.A</div>
+                        </div>
+                        <h4>Balegha Anslim</h4>
+                        <p class="team-role">HR Manager</p>
+                        <span class="dept-tag">Admin &amp; Finance</span>
+                    </div>
+                    <div class="team-card" data-category="admin">
+                        <div class="team-photo">
+                            <div class="team-initials">A.T</div>
+                        </div>
+                        <h4>Abigail Tetteh</h4>
+                        <p class="team-role">Procurement Officer</p>
+                        <span class="dept-tag">Admin &amp; Finance</span>
+                    </div>
+                    <div class="team-card" data-category="admin">
+                        <div class="team-photo">
+                            <div class="team-initials">Y.O</div>
+                        </div>
+                        <h4>Yaw Owusu</h4>
+                        <p class="team-role">Admin Officer</p>
+                        <span class="dept-tag">Admin &amp; Finance</span>
+                    </div>
+                </div>
 
-        <div class="join-strip reveal on-dark">
-          <div>
-            <h4>Don't See Your Role Listed?</h4>
-            <p>We hire engineers, plant operators, supervisors and support staff on a rolling basis as contracts
-              mobilize.</p>
-          </div>
-          <a href="contact.html" class="btn btn-outline on-dark">Send Us Your CV <span class="btn-arrow">→</span></a>
-        </div>
-      </div>
-    </section>
+                <div class="join-strip reveal on-dark">
+                    <div>
+                        <h4>Don't See Your Role Listed?</h4>
+                        <p>We hire engineers, plant operators, supervisors and support staff on a rolling basis as
+                            contracts
+                            mobilize.</p>
+                    </div>
+                    <a href="contact" class="btn btn-outline on-dark">Send Us Your CV <span
+                            class="btn-arrow">→</span></a>
+                </div>
+            </div>
+        </section>
 
-    <!-- ============ CULTURE PILLARS ============ -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">Why Join Us</p>
-            <h2 style="max-width:16ch">What It's Like on a Sandaman Site</h2>
-          </div>
-        </div>
-        <div class="pillar-row reveal">
-          <div class="pillar" style="border-top-color:var(--line)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--forest-3)">
-              <path d="M12 3l7 3v5c0 5-3.4 8.4-7 10-3.6-1.6-7-5-7-10V6l7-3z" stroke-linejoin="round" />
-            </svg>
-            <h4>Safety First, Always</h4>
-            <p>Daily toolbox talks and PPE enforced on every site, no exceptions.</p>
-          </div>
-          <div class="pillar" style="border-top-color:var(--line)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--forest-3)">
-              <path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 15.8 7.1 18.2l.9-5.5-4-3.9 5.5-.8L12 3z"
-                stroke-linejoin="round" />
-            </svg>
-            <h4>Real Skill Development</h4>
-            <p>On-the-job training and certifications for plant operators and site staff.</p>
-          </div>
-          <div class="pillar" style="border-top-color:var(--line)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--forest-3)">
-              <circle cx="12" cy="12" r="9" />
-              <path d="M12 7v5l3.5 2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            <h4>Paid On Time</h4>
-            <p>Payroll runs on schedule every month — for crew and suppliers alike.</p>
-          </div>
-          <div class="pillar" style="border-top-color:var(--line)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--forest-3)">
-              <path d="M4 20v-6a4 4 0 014-4h0a4 4 0 014 4v6M12 20v-4a4 4 0 014-4h0a4 4 0 014 4v4" stroke-linecap="round"
-                stroke-linejoin="round" />
-              <circle cx="8" cy="6" r="2.4" />
-              <circle cx="16" cy="8" r="2.4" />
-            </svg>
-            <h4>Promote From Within</h4>
-            <p>Several current supervisors started as labourers or junior operators.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+        <!-- ============ CULTURE PILLARS ============ -->
+        <section class="section">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">Why Join Us</p>
+                        <h2 style="max-width:16ch">What It's Like on a Sandaman Site</h2>
+                    </div>
+                </div>
+                <div class="pillar-row reveal">
+                    <div class="pillar" style="border-top-color:var(--line)">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            style="color:var(--forest-3)">
+                            <path d="M12 3l7 3v5c0 5-3.4 8.4-7 10-3.6-1.6-7-5-7-10V6l7-3z" stroke-linejoin="round" />
+                        </svg>
+                        <h4>Safety First, Always</h4>
+                        <p>Daily toolbox talks and PPE enforced on every site, no exceptions.</p>
+                    </div>
+                    <div class="pillar" style="border-top-color:var(--line)">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            style="color:var(--forest-3)">
+                            <path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 15.8 7.1 18.2l.9-5.5-4-3.9 5.5-.8L12 3z"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <h4>Real Skill Development</h4>
+                        <p>On-the-job training and certifications for plant operators and site staff.</p>
+                    </div>
+                    <div class="pillar" style="border-top-color:var(--line)">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            style="color:var(--forest-3)">
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M12 7v5l3.5 2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <h4>Paid On Time</h4>
+                        <p>Payroll runs on schedule every month — for crew and suppliers alike.</p>
+                    </div>
+                    <div class="pillar" style="border-top-color:var(--line)">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            style="color:var(--forest-3)">
+                            <path d="M4 20v-6a4 4 0 014-4h0a4 4 0 014 4v6M12 20v-4a4 4 0 014-4h0a4 4 0 014 4v4"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <circle cx="8" cy="6" r="2.4" />
+                            <circle cx="16" cy="8" r="2.4" />
+                        </svg>
+                        <h4>Promote From Within</h4>
+                        <p>Several current supervisors started as labourers or junior operators.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- ============ CTA BAND ============ -->
-    <section class="cta-band">
-      <div class="container">
-        <h2>Interested in Joining the Team?</h2>
-        <a href="contact.html" class="btn btn-outline">Get In Touch <span class="btn-arrow">→</span></a>
-      </div>
-    </section>
-  </main>
+        <!-- ============ CTA BAND ============ -->
+        <section class="cta-band">
+            <div class="container">
+                <h2>Interested in Joining the Team?</h2>
+                <a href="contact" class="btn btn-outline">Get In Touch <span class="btn-arrow">→</span></a>
+            </div>
+        </section>
+    </main>
 
-  <!-- ============ FOOTER ============ -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="logo">
-            <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="40" height="40" fill="#1B3A2B" />
-              <path d="M0 40L40 0V14L14 40H0Z" fill="#F5B700" />
-              <path d="M22 40L40 22V32L32 40H22Z" fill="#F5B700" />
-            </svg>
-            <span class="word">SANDAMAN<small>Constructions</small></span>
-          </a>
-          <p>A Ghanaian-owned civil engineering and building construction company delivering infrastructure across the
-            country.</p>
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index" class="logo">
+                        <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" fill="#1B3A2B" />
+                            <path d="M0 40L40 0V14L14 40H0Z" fill="#F5B700" />
+                            <path d="M22 40L40 22V32L32 40H22Z" fill="#F5B700" />
+                        </svg>
+                        <span class="word">SANDAMAN<small>Constructions</small></span>
+                    </a>
+                    <p>A Ghanaian-owned civil engineering and building construction company delivering infrastructure
+                        across the
+                        country.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigate</h4>
+                    <ul>
+                        <li><a href="index">Home</a></li>
+                        <li><a href="about">About Us</a></li>
+                        <li><a href="team">Our Team</a></li>
+                        <li><a href="sectors">Business Lines</a></li>
+                        <li><a href="projects">Projects</a></li>
+                        <li><a href="contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Lines</h4>
+                    <ul>
+                        <li><a href="sectors">Roads &amp; Highways</a></li>
+                        <li><a href="sectors">Building Construction</a></li>
+                        <li><a href="sectors">Earthworks &amp; Civil Eng.</a></li>
+                        <li><a href="sectors">Water &amp; Drainage</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 21s7-6.3 7-11.5A7 7 0 105 9.5C5 14.7 12 21 12 21z" />
+                                <circle cx="12" cy="9.5" r="2.3" />
+                            </svg> AG-0196-3430, 37 Biem Gyamfi Street</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path
+                                    d="M4 4h4l2 5-2.5 1.5a12 12 0 006 6L15 14l5 2v4a2 2 0 01-2 2C9.6 22 2 14.4 2 6a2 2 0 012-2z" />
+                            </svg> +233 24 762 2522 / +233 50 801 1854</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M3 5h18v14H3V5z" />
+                                <path d="M3 6l9 7 9-7" />
+                            </svg> info@sandamanconstructions.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span class="meta">&copy;
+                    <script>
+                        const date = new Date();
+                        const year = date.getFullYear();
+                        document.write(year);
+                    </script> Sandaman Constructions Ltd. &nbsp;·&nbsp; Kumasi, Ghana
+                </span>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/share/1JJFzLcKzm/?mibextid=wwXIfr" aria-label="Facebook"><svg
+                            width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.6">
+                            <path d="M15 8h2V4h-2a4 4 0 00-4 4v2H9v4h2v6h4v-6h2.5l.5-4H15V8z" />
+                        </svg></a>
+                    <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.6">
+                            <rect x="3" y="9" width="4" height="10" />
+                            <circle cx="5" cy="5" r="1.6" />
+                            <path d="M11 19v-6a3 3 0 016 0v6M11 19V9" />
+                        </svg></a>
+                    <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.6">
+                            <rect x="3" y="3" width="18" height="18" rx="4" />
+                            <circle cx="12" cy="12" r="4" />
+                            <circle cx="17.5" cy="6.5" r="1" />
+                        </svg></a>
+                </div>
+            </div>
         </div>
-        <div class="footer-col">
-          <h4>Navigate</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="team.html">Our Team</a></li>
-            <li><a href="sectors.html">Business Lines</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Business Lines</h4>
-          <ul>
-            <li><a href="sectors.html">Roads &amp; Highways</a></li>
-            <li><a href="sectors.html">Building Construction</a></li>
-            <li><a href="sectors.html">Earthworks &amp; Civil Eng.</a></li>
-            <li><a href="sectors.html">Water &amp; Drainage</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <ul class="footer-contact">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 21s7-6.3 7-11.5A7 7 0 105 9.5C5 14.7 12 21 12 21z" />
-                <circle cx="12" cy="9.5" r="2.3" />
-              </svg> No. 12 Site Avenue, North Ridge, Accra, Ghana</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M4 4h4l2 5-2.5 1.5a12 12 0 006 6L15 14l5 2v4a2 2 0 01-2 2C9.6 22 2 14.4 2 6a2 2 0 012-2z" />
-              </svg> +233 20 000 0000</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M3 5h18v14H3V5z" />
-                <path d="M3 6l9 7 9-7" />
-              </svg> info@sandamanconstructions.com</li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span class="meta">&copy;
-          <script>
-            const date = new Date();
-            const year = date.getFullYear();
-            document.write(year);
-          </script> Sandaman Constructions Ltd. &nbsp;·&nbsp; AG 01963430, 37 Biem Gyamfi Street,
-          Kumasi, Ghana
-        </span>
-        <div class="footer-social">
-          <a href="https://www.facebook.com/share/1JJFzLcKzm/?mibextid=wwXIfr" aria-label="Facebook"><svg width="16"
-              height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-              <path d="M15 8h2V4h-2a4 4 0 00-4 4v2H9v4h2v6h4v-6h2.5l.5-4H15V8z" />
-            </svg></a>
-          <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1.6">
-              <rect x="3" y="9" width="4" height="10" />
-              <circle cx="5" cy="5" r="1.6" />
-              <path d="M11 19v-6a3 3 0 016 0v6M11 19V9" />
-            </svg></a>
-          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1.6">
-              <rect x="3" y="3" width="18" height="18" rx="4" />
-              <circle cx="12" cy="12" r="4" />
-              <circle cx="17.5" cy="6.5" r="1" />
-            </svg></a>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
