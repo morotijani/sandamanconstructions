@@ -1,3 +1,8 @@
+<?php
+require_once 'db/db.php';
+$stmt = $pdo->query('SELECT * FROM projects WHERE is_featured = 1 ORDER BY created_at DESC LIMIT 3');
+$featured_projects = $stmt->fetchAll();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -252,36 +257,26 @@
                     <a href="projects" class="btn btn-outline on-dark">View Full Portfolio</a>
                 </div>
                 <div class="project-grid reveal">
-                    <a href="projects" class="project-card">
-                        <div class="project-media"><span class="tag">Roads</span>
-                            <div class="ph-photo">Project photo<br>placeholder</div>
-                        </div>
-                        <div class="project-body">
-                            <span class="loc">Eastern Region, Ghana</span>
-                            <h3>Asamankese–Kade Feeder Road</h3>
-                            <span class="status">Completed · 14km</span>
-                        </div>
-                    </a>
-                    <a href="projects" class="project-card">
-                        <div class="project-media"><span class="tag">Buildings</span>
-                            <div class="ph-photo">Project photo<br>placeholder</div>
-                        </div>
-                        <div class="project-body">
-                            <span class="loc">Accra, Ghana</span>
-                            <h3>Tema Community Market Complex</h3>
-                            <span class="status">In Progress · Phase 2</span>
-                        </div>
-                    </a>
-                    <a href="projects" class="project-card">
-                        <div class="project-media"><span class="tag">Water</span>
-                            <div class="ph-photo">Project photo<br>placeholder</div>
-                        </div>
-                        <div class="project-body">
-                            <span class="loc">Ashanti Region, Ghana</span>
-                            <h3>Ejisu Stormwater Drainage Upgrade</h3>
-                            <span class="status">Completed · 6.2km network</span>
-                        </div>
-                    </a>
+                    <?php if (empty($featured_projects)): ?>
+                        <p style="color:var(--steel-light); grid-column: 1/-1;">No featured projects selected yet.</p>
+                    <?php else: ?>
+                        <?php foreach ($featured_projects as $fp): ?>
+                            <a href="projects" class="project-card">
+                                <div class="project-media"><span class="tag"><?= htmlspecialchars($fp['category']) ?></span>
+                                    <?php if ($fp['image_url']): ?>
+                                        <img src="<?= htmlspecialchars($fp['image_url']) ?>" alt="Project Image" style="width:100%; height:100%; object-fit:cover;">
+                                    <?php else: ?>
+                                        <div class="ph-photo">Project photo<br>placeholder</div>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="project-body">
+                                    <span class="loc"><?= htmlspecialchars($fp['location'] ?: 'Ghana') ?></span>
+                                    <h3><?= htmlspecialchars($fp['title']) ?></h3>
+                                    <span class="status"><?= htmlspecialchars($fp['status']) ?></span>
+                                </div>
+                            </a>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 </div>
             </div>
         </section>

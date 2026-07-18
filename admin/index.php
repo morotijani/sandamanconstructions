@@ -84,6 +84,12 @@ $projects = $stmt->fetchAll();
     </header>
 
     <main class="container dashboard-section">
+        <?php if (isset($_GET['error']) && $_GET['error'] === 'feature_limit'): ?>
+            <div style="background: #e63946; color: white; padding: 1rem; border-radius: 4px; margin-bottom: 1rem; text-align: center;">
+                <strong>Error:</strong> You can only feature a maximum of 3 projects on the homepage. Please unfeature an existing project first.
+            </div>
+        <?php endif; ?>
+        
         <div class="header-actions">
             <h2>Projects</h2>
             <a href="project_add.php" class="btn btn-primary">Add New Project</a>
@@ -115,11 +121,21 @@ $projects = $stmt->fetchAll();
                                     No Image
                                 <?php endif; ?>
                             </td>
-                            <td><?= htmlspecialchars($p['title']) ?></td>
+                            <td>
+                                <?php if ($p['is_featured']): ?>
+                                    <span style="color: #F5B700;" title="Featured on Homepage">★</span>
+                                <?php endif; ?>
+                                <?= htmlspecialchars($p['title']) ?>
+                            </td>
                             <td><?= htmlspecialchars($p['category']) ?></td>
                             <td><?= htmlspecialchars($p['location']) ?></td>
                             <td><?= htmlspecialchars($p['status']) ?></td>
                             <td class="actions">
+                                <?php if ($p['is_featured']): ?>
+                                    <a href="project_feature.php?id=<?= $p['id'] ?>" style="color: #F5B700;">★ Unfeature</a>
+                                <?php else: ?>
+                                    <a href="project_feature.php?id=<?= $p['id'] ?>">☆ Feature</a>
+                                <?php endif; ?>
                                 <a href="project_edit.php?id=<?= $p['id'] ?>">Edit</a>
                                 <a href="#" class="delete" onclick="openDeleteModal('project_delete.php?id=<?= $p['id'] ?>'); return false;">Delete</a>
                             </td>
