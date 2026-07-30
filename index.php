@@ -3,381 +3,412 @@ require_once 'db/db.php';
 $stmt = $pdo->query('SELECT * FROM projects WHERE is_featured = 1 ORDER BY created_at DESC LIMIT 3');
 $featured_projects = $stmt->fetchAll();
 ?>
-<!DOCTYPE html>
-<html lang="en">
+<?php
+$page_title = 'Sandaman Constructions — Building Ghana\'s Infrastructure';
+$page_description = 'Sandaman Constructions is a civil engineering and building construction company delivering roads, earthworks, water infrastructure and commercial developments across Ghana.';
+include 'includes/header.php';
+?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sandaman Constructions — Building Ghana's Infrastructure</title>
-    <meta name="description"
-        content="Sandaman Constructions is a civil engineering and building construction company delivering roads, earthworks, water infrastructure and commercial developments across Ghana.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/components.css">
-</head>
+<main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+        <div class="blueprint-bg"></div>
+        <svg class="hero-art" viewBox="0 0 480 420" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="400" cy="80" r="50" fill="#F5B700" opacity=".12" />
+            <path d="M10 372h460" stroke="#F5B700" stroke-width="2" opacity=".35" />
+            <!-- building under construction -->
+            <rect x="120" y="170" width="150" height="202" stroke="#F6F3EA" stroke-width="1.6" opacity=".55" />
+            <path d="M120 210h150M120 250h150M120 290h150M120 330h150" stroke="#F6F3EA" stroke-width="1" opacity=".3" />
+            <path d="M148 170v202M198 170v202M248 170v202" stroke="#F6F3EA" stroke-width="1" opacity=".3" />
+            <rect x="134" y="222" width="24" height="26" fill="#F5B700" opacity=".18" />
+            <rect x="206" y="262" width="24" height="26" fill="#F5B700" opacity=".18" />
+            <rect x="164" y="302" width="24" height="26" fill="#F5B700" opacity=".18" />
+            <!-- crane -->
+            <path d="M338 40v332" stroke="#F5B700" stroke-width="3" />
+            <path d="M338 60h120M338 60h-56" stroke="#F5B700" stroke-width="3" stroke-linecap="round" />
+            <path d="M318 40l20 20 20-20" stroke="#F5B700" stroke-width="2" opacity=".6" />
+            <path d="M430 60v70" stroke="#F6F3EA" stroke-width="1.4" opacity=".7" />
+            <rect x="422" y="130" width="16" height="14" stroke="#F6F3EA" stroke-width="1.4" opacity=".7" />
+            <path d="M338 96l-46 18" stroke="#F6F3EA" stroke-width="1.4" opacity=".5" />
+            <!-- ground vehicle silhouette -->
+            <path d="M20 372v-24a10 10 0 0110-10h34l16-20h30l6 20h14a8 8 0 018 8v26" stroke="#F6F3EA" stroke-width="1.6"
+                opacity=".5" stroke-linejoin="round" />
+            <circle cx="46" cy="372" r="10" stroke="#F5B700" stroke-width="2" opacity=".7" />
+            <circle cx="108" cy="372" r="10" stroke="#F5B700" stroke-width="2" opacity=".7" />
+        </svg>
+        <div class="container hero-inner">
+            <p class="hero-tag">Civil Engineering &amp; Building Construction — Ghana</p>
+            <h1>We Build the Ground <em>Ghana</em> Stands On.</h1>
+            <p class="hero-lead">Sandaman Constructions delivers roads, earthworks, water infrastructure and commercial
+                developments — engineered for durability, executed on schedule, built by local expertise.</p>
+            <div class="hero-actions">
+                <a href="projects" class="btn btn-primary">View Our Projects <span class="btn-arrow">→</span></a>
+                <a href="sectors" class="btn btn-outline on-dark">Explore Business Lines</a>
+            </div>
+        </div>
+        <div class="hero-scroll">Scroll</div>
+    </section>
 
-<body>
+    <img src="media/pexels-ygpixeltz-35340757.jpg" alt="">
 
-    <!-- ============ HEADER ============ -->
-    <header class="site-header">
+
+    <!-- ============ HERO DIVIDER ============ -->
+    <!-- <div class="hero-divider" style="background-color: var(--forest); line-height: 0; padding-top: 2rem;">
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="width: 100%; height: 4vw; min-height: 36px; display: block;">
+      <polygon points="0,70 1440,10 1440,30 0,90" fill="var(--paper)" />
+    </svg>
+  </div> -->
+
+    <!-- ============ INTRO / PILLARS ============ -->
+    <section class="section-tight on-forest">
         <div class="container">
-            <a href="index" class="logo">
-                <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="40" height="40" fill="#1B3A2B" />
-                    <path d="M0 40L40 0V14L14 40H0Z" fill="#F5B700" />
-                    <path d="M22 40L40 22V32L32 40H22Z" fill="#F5B700" />
+            <div class="split-panel reveal" style="margin-bottom:56px">
+                <div>
+                    <p class="eyebrow">Who We Are</p>
+                    <h2 style="max-width:16ch">Engineering Discipline. Local Roots.</h2>
+                    <p>A Ghanaian-owned civil engineering and building contractor. We plan, engineer and construct
+                        infrastructure
+                        built for the country's terrain, climate and traffic loads.</p>
+                </div>
+                <div class="art-frame">
+                    <svg class="scene-svg" viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="320" fill="#1B3A2B" />
+                        <rect x="0" y="230" width="400" height="90" fill="#24503a" />
+                        <rect x="0" y="255" width="400" height="65" fill="#2F5B41" />
+                        <rect x="0" y="278" width="400" height="42" fill="#3E7554" />
+                        <rect x="0" y="296" width="400" height="24" fill="#F5B700" />
+                        <path d="M340 250l14-14M340 264l22-22M340 278l30-30M340 292l38-38M340 306l46-46"
+                            stroke="#F6F3EA" stroke-width="1" opacity=".35" />
+                        <text x="16" y="248" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1"
+                            fill="#AEB3A3">SUBGRADE</text>
+                        <text x="16" y="272" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1"
+                            fill="#AEB3A3">SUB-BASE</text>
+                        <text x="16" y="294" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1"
+                            fill="#F6F3EA">BASE COURSE</text>
+                        <text x="16" y="312" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1"
+                            fill="#1B3A2B">ASPHALT SURFACE</text>
+                        <g transform="translate(200,150)">
+                            <ellipse cx="0" cy="52" rx="46" ry="6" fill="#0000" />
+                            <rect x="-38" y="8" width="76" height="30" rx="4" fill="#F6F3EA" opacity=".9" />
+                            <rect x="-26" y="-16" width="52" height="26" rx="4" fill="#F6F3EA" opacity=".9" />
+                            <circle cx="-22" cy="40" r="9" fill="#142219" />
+                            <circle cx="22" cy="40" r="9" fill="#142219" />
+                            <circle cx="-22" cy="40" r="4" fill="#F5B700" />
+                            <circle cx="22" cy="40" r="4" fill="#F5B700" />
+                        </g>
+                        <circle cx="70" cy="60" r="34" fill="#F5B700" opacity=".1" />
+                    </svg>
+                </div>
+            </div>
+            <div class="pillar-row reveal">
+                <div class="pillar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 15.8 7.1 18.2l.9-5.5-4-3.9 5.5-.8L12 3z"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <h4>Precision Engineering</h4>
+                    <p>Designs specified to load, soil and climate data for every site.</p>
+                </div>
+                <div class="pillar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M4 20v-6a4 4 0 014-4h0a4 4 0 014 4v6M12 20v-4a4 4 0 014-4h0a4 4 0 014 4v4"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="8" cy="6" r="2.4" />
+                        <circle cx="16" cy="8" r="2.4" />
+                    </svg>
+                    <h4>Local Partnership</h4>
+                    <p>Ghanaian crews, suppliers and site knowledge on every contract.</p>
+                </div>
+                <div class="pillar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 3l7 3v5c0 5-3.4 8.4-7 10-3.6-1.6-7-5-7-10V6l7-3z" stroke-linejoin="round" />
+                        <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <h4>Site Safety</h4>
+                    <p>Zero-harm targets enforced through daily toolbox protocol.</p>
+                </div>
+                <div class="pillar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M12 7v5l3.5 2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <h4>On-Schedule Delivery</h4>
+                    <p>Phased programmes tracked against contract milestones weekly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ GAUGE STATS ============ -->
+    <section class="section on-ink">
+        <div class="container">
+            <p class="eyebrow center" style="justify-content:center">By The Numbers</p>
+            <h2 class="center" style="max-width:20ch;margin-bottom:2.6rem">A Decade of Groundwork, Measured on Site</h2>
+
+            <div class="gauge-strip reveal">
+                <div class="gauge" data-value="90">
+                    <svg viewBox="0 0 140 90">
+                        <path class="gauge-track" d="M15 80 A55 55 0 0 1 125 80" />
+                        <path class="gauge-fill" data-circumference="172.8" d="M15 80 A55 55 0 0 1 125 80"
+                            style="stroke-dasharray:172.8;stroke-dashoffset:172.8;" />
+                        <text x="70" y="66" text-anchor="middle" class="gauge-value" data-count="12"
+                            data-suffix="+">0</text>
+                    </svg>
+                    <p class="gauge-label">Years Experience</p>
+                </div>
+                <div class="gauge" data-value="82">
+                    <svg viewBox="0 0 140 90">
+                        <path class="gauge-track" d="M15 80 A55 55 0 0 1 125 80" />
+                        <path class="gauge-fill" data-circumference="172.8" d="M15 80 A55 55 0 0 1 125 80"
+                            style="stroke-dasharray:172.8;stroke-dashoffset:172.8;" />
+                        <text x="70" y="66" text-anchor="middle" class="gauge-value" data-count="65"
+                            data-suffix="+">0</text>
+                    </svg>
+                    <p class="gauge-label">Projects Delivered</p>
+                </div>
+                <div class="gauge" data-value="97">
+                    <svg viewBox="0 0 140 90">
+                        <path class="gauge-track" d="M15 80 A55 55 0 0 1 125 80" />
+                        <path class="gauge-fill" data-circumference="172.8" d="M15 80 A55 55 0 0 1 125 80"
+                            style="stroke-dasharray:172.8;stroke-dashoffset:172.8;" />
+                        <text x="70" y="66" text-anchor="middle" class="gauge-value" data-count="97"
+                            data-suffix="%">0</text>
+                    </svg>
+                    <p class="gauge-label">On-Time Completion</p>
+                </div>
+                <div class="gauge" data-value="100">
+                    <svg viewBox="0 0 140 90">
+                        <path class="gauge-track" d="M15 80 A55 55 0 0 1 125 80" />
+                        <path class="gauge-fill" data-circumference="172.8" d="M15 80 A55 55 0 0 1 125 80"
+                            style="stroke-dasharray:172.8;stroke-dashoffset:172.8;" />
+                        <text x="70" y="66" text-anchor="middle" class="gauge-value" data-count="180"
+                            data-suffix="+">0</text>
+                    </svg>
+                    <p class="gauge-label">Skilled Workforce</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ GALLERY STRIP ============ -->
+    <section class="section-tight">
+        <div class="container">
+            <p class="eyebrow">On Site</p>
+            <h2 style="max-width:20ch;margin-bottom:1.4rem">A Look at the Work</h2>
+            <div class="gallery-grid reveal">
+                <div class="gallery-tile">
+                    <svg class="scene-svg" viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect width="300" height="300" fill="#1B3A2B" />
+                        <path d="M0 240h300" stroke="#3E7554" stroke-width="1" />
+                        <g stroke="#F6F3EA" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                            fill="none" opacity=".9">
+                            <path d="M60 240v-40l40-60 50 10-20 60" />
+                            <path d="M130 150l40-20 30 10-40 50" />
+                            <circle cx="160" cy="140" r="6" fill="#F5B700" stroke="none" />
+                        </g>
+                        <rect x="40" y="235" width="60" height="16" rx="3" fill="#F5B700" />
+                        <circle cx="55" cy="255" r="10" fill="#142219" stroke="#F6F3EA" stroke-width="2" />
+                        <circle cx="90" cy="255" r="10" fill="#142219" stroke="#F6F3EA" stroke-width="2" />
+                    </svg>
+                    <span class="cap">Earthworks &amp; Grading</span>
+                </div>
+                <div class="gallery-tile">
+                    <svg class="scene-svg" viewBox="0 0 300 160" preserveAspectRatio="xMidYMid slice"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect width="300" height="160" fill="#2F5B41" />
+                        <rect y="110" width="300" height="50" fill="#F5B700" />
+                        <path d="M0 135h300" stroke="#1B3A2B" stroke-width="3" stroke-dasharray="14 10" />
+                        <g transform="translate(190,60)" stroke="#F6F3EA" stroke-width="2.2" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="-40" y="10" width="80" height="26" rx="4" />
+                            <rect x="-22" y="-14" width="46" height="24" rx="3" />
+                            <circle cx="-24" cy="42" r="10" />
+                            <circle cx="24" cy="42" r="10" />
+                        </g>
+                    </svg>
+                    <span class="cap">Road Paving</span>
+                </div>
+                <div class="gallery-tile">
+                    <svg class="scene-svg" viewBox="0 0 160 160" preserveAspectRatio="xMidYMid slice"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect width="160" height="160" fill="#24503a" />
+                        <g stroke="#F6F3EA" stroke-width="2" opacity=".85" fill="none">
+                            <path d="M20 150V40l50-25 50 25v110" />
+                            <path d="M20 70h100M20 100h100M20 130h100M45 40v110M95 40v110" />
+                        </g>
+                        <rect x="45" y="70" width="20" height="20" fill="#F5B700" opacity=".8" />
+                        <rect x="95" y="100" width="20" height="20" fill="#F5B700" opacity=".5" />
+                    </svg>
+                    <span class="cap">Building Shell</span>
+                </div>
+                <div class="gallery-tile">
+                    <svg class="scene-svg" viewBox="0 0 160 160" preserveAspectRatio="xMidYMid slice"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect width="160" height="160" fill="#3E7554" />
+                        <g stroke="#F6F3EA" stroke-width="2.4" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M55 70a25 25 0 1150 0c0 12-25 34-25 34S55 82 55 70z" />
+                            <path d="M40 76c-14 0-14 22 0 22" />
+                        </g>
+                        <circle cx="80" cy="68" r="9" fill="#F5B700" stroke="none" />
+                    </svg>
+                    <span class="cap">Site Team</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ BUSINESS LINES TEASER ============ -->
+    <section class="section">
+        <div class="container">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">What We Build</p>
+                    <h2>Business Lines</h2>
+                </div>
+                <p class="lead">Six disciplines, one delivery standard — from earthworks that set the grade to the
+                    finished
+                    building on top of it.</p>
+            </div>
+        </div>
+        <div class="sector-grid reveal">
+            <a href="sectors" class="sector-card">
+                <span class="sector-num">01</span>
+                <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                    <path d="M2 20L10 4h4l8 16" stroke-linejoin="round" />
+                    <path d="M6.5 12h11M4.5 16h15" stroke-dasharray="2 2" />
                 </svg>
-                <span class="word">SANDAMAN<small>Constructions</small></span>
+                <h3>Roads &amp; Highways</h3>
+                <p>Grading, paving and drainage for national, feeder and estate roads.</p>
+                <span class="sector-link">Learn more →</span>
             </a>
-            <nav>
-                <ul class="nav-list" id="nav-list">
-                    <li><a href="index" aria-current="page">Home</a></li>
-                    <li><a href="about">About Us</a></li>
-                    <li><a href="team">Our Team</a></li>
-                    <li><a href="sectors">Business Lines</a></li>
-                    <li><a href="projects">Projects</a></li>
-                    <li><a href="contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="nav-cta">
-                <a href="contact" class="btn btn-outline on-dark">Get a Quote</a>
-                <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
-            </div>
+            <a href="sectors" class="sector-card">
+                <span class="sector-num">02</span>
+                <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                    <path d="M3 20h18M5 20V9l5-3 5 3v11M13 20v-6h4v6" stroke-linejoin="round" />
+                </svg>
+                <h3>Building Construction</h3>
+                <p>Commercial, institutional and residential builds, shell to finish.</p>
+                <span class="sector-link">Learn more →</span>
+            </a>
+            <a href="sectors" class="sector-card">
+                <span class="sector-num">03</span>
+                <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                    <path d="M4 19h16M6 19l1-9h10l1 9M9 10l1.5-5h3L15 10" stroke-linejoin="round" />
+                </svg>
+                <h3>Earthworks &amp; Civil Engineering</h3>
+                <p>Excavation, site clearance, foundations and land development.</p>
+                <span class="sector-link">Learn more →</span>
+            </a>
+            <a href="sectors" class="sector-card">
+                <span class="sector-num">04</span>
+                <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                    <path d="M12 3c3 4 5 6.7 5 9.5a5 5 0 01-10 0C7 9.7 9 7 12 3z" />
+                </svg>
+                <h3>Water &amp; Drainage</h3>
+                <p>Stormwater systems, culverts, boreholes and treatment works.</p>
+                <span class="sector-link">Learn more →</span>
+            </a>
+            <a href="sectors" class="sector-card">
+                <span class="sector-num">05</span>
+                <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                    <path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" stroke-linejoin="round" />
+                </svg>
+                <h3>Energy &amp; Utilities</h3>
+                <p>Substation civils, cable ducting and utility corridor works.</p>
+                <span class="sector-link">Learn more →</span>
+            </a>
+            <a href="sectors" class="sector-card">
+                <span class="sector-num">06</span>
+                <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                    <path d="M3 20l5-9 4 5 3-6 6 10H3z" stroke-linejoin="round" />
+                </svg>
+                <h3>Quarry &amp; Mining Support</h3>
+                <p>Haul road construction, site access and materials supply.</p>
+                <span class="sector-link">Learn more →</span>
+            </a>
         </div>
-    </header>
+    </section>
 
-    <main>
-        <!-- ============ HERO ============ -->
-        <section class="hero">
-            <div class="blueprint-bg"></div>
-            <div class="container hero-inner">
-                <p class="hero-tag">Civil Engineering &amp; Building Construction — Ghana</p>
-                <h1>We Build the Ground <em>Ghana</em> Stands On.</h1>
-                <p class="hero-lead">Sandaman Constructions delivers roads, earthworks, water infrastructure and
-                    commercial
-                    developments — engineered for durability, executed on schedule, built by local expertise.</p>
-                <div class="hero-actions">
-                    <a href="projects" class="btn btn-primary">View Our Projects <span class="btn-arrow">→</span></a>
-                    <a href="sectors" class="btn btn-outline on-dark">Explore Business Lines</a>
-                </div>
-            </div>
-            <div class="hero-scroll">Scroll</div>
-        </section>
-
-        <!-- ============ INTRO / PILLARS ============ -->
-        <section class="section-tight on-forest">
-            <div class="container">
-                <div class="section-head">
-                    <div>
-                        <p class="eyebrow">Who We Are</p>
-                        <h2 style="max-width:16ch">Engineering Discipline. Local Roots.</h2>
-                    </div>
-                    <p class="lead">Sandaman Constructions is a Ghanaian-owned civil engineering and building
-                        contractor. We plan,
-                        engineer and construct infrastructure that stands up to the country's terrain, climate and
-                        traffic loads —
-                        from rural access roads to multi-storey commercial builds.</p>
-                </div>
-                <div class="pillar-row reveal">
-                    <div class="pillar">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 15.8 7.1 18.2l.9-5.5-4-3.9 5.5-.8L12 3z"
-                                stroke-linejoin="round" />
-                        </svg>
-                        <h4>Precision Engineering</h4>
-                        <p>Designs specified to load, soil and climate data for every site.</p>
-                    </div>
-                    <div class="pillar">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M4 20v-6a4 4 0 014-4h0a4 4 0 014 4v6M12 20v-4a4 4 0 014-4h0a4 4 0 014 4v4"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                            <circle cx="8" cy="6" r="2.4" />
-                            <circle cx="16" cy="8" r="2.4" />
-                        </svg>
-                        <h4>Local Partnership</h4>
-                        <p>Ghanaian crews, suppliers and site knowledge on every contract.</p>
-                    </div>
-                    <div class="pillar">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 3l7 3v5c0 5-3.4 8.4-7 10-3.6-1.6-7-5-7-10V6l7-3z" stroke-linejoin="round" />
-                            <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                        <h4>Site Safety</h4>
-                        <p>Zero-harm targets enforced through daily toolbox protocol.</p>
-                    </div>
-                    <div class="pillar">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="12" r="9" />
-                            <path d="M12 7v5l3.5 2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                        <h4>On-Schedule Delivery</h4>
-                        <p>Phased programmes tracked against contract milestones weekly.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============ GAUGE STATS ============ -->
-        <section class="section on-ink">
-            <div class="container">
-                <p class="eyebrow center" style="justify-content:center">By The Numbers</p>
-                <h2 class="center" style="max-width:20ch;margin-bottom:2.6rem">A Decade of Groundwork, Measured on Site
-                </h2>
-
-                <div class="gauge-strip reveal">
-                    <div class="gauge" data-value="90">
-                        <svg viewBox="0 0 140 90">
-                            <path class="gauge-track" d="M15 80 A55 55 0 0 1 125 80" />
-                            <path class="gauge-fill" data-circumference="172.8" d="M15 80 A55 55 0 0 1 125 80"
-                                style="stroke-dasharray:172.8;stroke-dashoffset:172.8;" />
-                            <text x="70" y="66" text-anchor="middle" class="gauge-value" data-count="12"
-                                data-suffix="+">0</text>
-                        </svg>
-                        <p class="gauge-label">Years Experience</p>
-                    </div>
-                    <div class="gauge" data-value="82">
-                        <svg viewBox="0 0 140 90">
-                            <path class="gauge-track" d="M15 80 A55 55 0 0 1 125 80" />
-                            <path class="gauge-fill" data-circumference="172.8" d="M15 80 A55 55 0 0 1 125 80"
-                                style="stroke-dasharray:172.8;stroke-dashoffset:172.8;" />
-                            <text x="70" y="66" text-anchor="middle" class="gauge-value" data-count="65"
-                                data-suffix="+">0</text>
-                        </svg>
-                        <p class="gauge-label">Projects Delivered</p>
-                    </div>
-                    <div class="gauge" data-value="97">
-                        <svg viewBox="0 0 140 90">
-                            <path class="gauge-track" d="M15 80 A55 55 0 0 1 125 80" />
-                            <path class="gauge-fill" data-circumference="172.8" d="M15 80 A55 55 0 0 1 125 80"
-                                style="stroke-dasharray:172.8;stroke-dashoffset:172.8;" />
-                            <text x="70" y="66" text-anchor="middle" class="gauge-value" data-count="97"
-                                data-suffix="%">0</text>
-                        </svg>
-                        <p class="gauge-label">On-Time Completion</p>
-                    </div>
-                    <div class="gauge" data-value="100">
-                        <svg viewBox="0 0 140 90">
-                            <path class="gauge-track" d="M15 80 A55 55 0 0 1 125 80" />
-                            <path class="gauge-fill" data-circumference="172.8" d="M15 80 A55 55 0 0 1 125 80"
-                                style="stroke-dasharray:172.8;stroke-dashoffset:172.8;" />
-                            <text x="70" y="66" text-anchor="middle" class="gauge-value" data-count="180"
-                                data-suffix="+">0</text>
-                        </svg>
-                        <p class="gauge-label">Skilled Workforce</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============ BUSINESS LINES TEASER ============ -->
-        <section class="section">
-            <div class="container">
-                <div class="section-head">
-                    <div>
-                        <p class="eyebrow">What We Build</p>
-                        <h2>Business Lines</h2>
-                    </div>
-                    <p class="lead">Six disciplines, one delivery standard — from earthworks that set the grade to the
-                        finished
-                        building on top of it.</p>
-                </div>
-            </div>
-            <div class="sector-grid reveal">
-                <a href="sectors" class="sector-card">
-                    <span class="sector-num">01</span>
-                    <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
-                        <path d="M2 20L10 4h4l8 16" stroke-linejoin="round" />
-                        <path d="M6.5 12h11M4.5 16h15" stroke-dasharray="2 2" />
-                    </svg>
-                    <h3>Roads &amp; Highways</h3>
-                    <p>Grading, paving and drainage for national, feeder and estate roads.</p>
-                    <span class="sector-link">Learn more →</span>
-                </a>
-                <a href="sectors" class="sector-card">
-                    <span class="sector-num">02</span>
-                    <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
-                        <path d="M3 20h18M5 20V9l5-3 5 3v11M13 20v-6h4v6" stroke-linejoin="round" />
-                    </svg>
-                    <h3>Building Construction</h3>
-                    <p>Commercial, institutional and residential builds, shell to finish.</p>
-                    <span class="sector-link">Learn more →</span>
-                </a>
-                <a href="sectors" class="sector-card">
-                    <span class="sector-num">03</span>
-                    <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
-                        <path d="M4 19h16M6 19l1-9h10l1 9M9 10l1.5-5h3L15 10" stroke-linejoin="round" />
-                    </svg>
-                    <h3>Earthworks &amp; Civil Engineering</h3>
-                    <p>Excavation, site clearance, foundations and land development.</p>
-                    <span class="sector-link">Learn more →</span>
-                </a>
-                <a href="sectors" class="sector-card">
-                    <span class="sector-num">04</span>
-                    <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
-                        <path d="M12 3c3 4 5 6.7 5 9.5a5 5 0 01-10 0C7 9.7 9 7 12 3z" />
-                    </svg>
-                    <h3>Water &amp; Drainage</h3>
-                    <p>Stormwater systems, culverts, boreholes and treatment works.</p>
-                    <span class="sector-link">Learn more →</span>
-                </a>
-                <a href="sectors" class="sector-card">
-                    <span class="sector-num">05</span>
-                    <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
-                        <path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" stroke-linejoin="round" />
-                    </svg>
-                    <h3>Energy &amp; Utilities</h3>
-                    <p>Substation civils, cable ducting and utility corridor works.</p>
-                    <span class="sector-link">Learn more →</span>
-                </a>
-                <a href="sectors" class="sector-card">
-                    <span class="sector-num">06</span>
-                    <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
-                        <path d="M3 20l5-9 4 5 3-6 6 10H3z" stroke-linejoin="round" />
-                    </svg>
-                    <h3>Quarry &amp; Mining Support</h3>
-                    <p>Haul road construction, site access and materials supply.</p>
-                    <span class="sector-link">Learn more →</span>
-                </a>
-            </div>
-        </section>
-
-        <!-- ============ FEATURED PROJECTS ============ -->
-        <section class="section on-forest">
-            <div class="container">
-                <div class="section-head">
-                    <div>
-                        <p class="eyebrow">Selected Work</p>
-                        <h2>Featured Projects</h2>
-                    </div>
-                    <a href="projects" class="btn btn-outline on-dark">View Full Portfolio</a>
-                </div>
-                <div class="project-grid reveal">
-                    <?php if (empty($featured_projects)): ?>
-                        <p style="color:var(--steel-light); grid-column: 1/-1;">No featured projects selected yet.</p>
-                    <?php else: ?>
-                        <?php foreach ($featured_projects as $fp): ?>
-                            <a href="projects" class="project-card">
-                                <div class="project-media"><span class="tag"><?= htmlspecialchars($fp['category']) ?></span>
-                                    <?php if ($fp['image_url']): ?>
-                                        <img src="<?= htmlspecialchars($fp['image_url']) ?>" alt="Project Image"
-                                            style="width:100%; height:100%; object-fit:cover;">
-                                    <?php else: ?>
-                                        <div class="ph-photo">Project photo<br>placeholder</div>
-                                    <?php endif; ?>
-                                </div>
-                                <div class="project-body">
-                                    <span class="loc"><?= htmlspecialchars($fp['location'] ?: 'Ghana') ?></span>
-                                    <h3><?= htmlspecialchars($fp['title']) ?></h3>
-                                    <span class="status"><?= htmlspecialchars($fp['status']) ?></span>
-                                </div>
-                            </a>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============ CTA BAND ============ -->
-        <section class="cta-band">
-            <div class="container">
-                <h2>Starting a New Project?</h2>
-                <a href="contact" class="btn btn-outline">Talk to Our Team <span class="btn-arrow">→</span></a>
-            </div>
-        </section>
-    </main>
-
-    <!-- ============ FOOTER ============ -->
-    <footer class="site-footer">
+    <!-- put image here -->
+    <img src="media/pexels-vadym-alyekseyenko-137433856-38520034.jpg" alt="">
+    <!-- ============ FEATURED PROJECTS ============ -->
+    <section class="section on-forest">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="index" class="logo">
-                        <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="40" height="40" fill="#1B3A2B" />
-                            <path d="M0 40L40 0V14L14 40H0Z" fill="#F5B700" />
-                            <path d="M22 40L40 22V32L32 40H22Z" fill="#F5B700" />
-                        </svg>
-                        <span class="word">SANDAMAN<small>Constructions</small></span>
-                    </a>
-                    <p>A Ghanaian-owned civil engineering and building construction company delivering infrastructure
-                        across the
-                        country.</p>
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">Selected Work</p>
+                    <h2>Featured Projects</h2>
                 </div>
-                <div class="footer-col">
-                    <h4>Navigate</h4>
-                    <ul>
-                        <li><a href="index">Home</a></li>
-                        <li><a href="about">About Us</a></li>
-                        <li><a href="team">Our Team</a></li>
-                        <li><a href="sectors">Business Lines</a></li>
-                        <li><a href="projects">Projects</a></li>
-                        <li><a href="contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Business Lines</h4>
-                    <ul>
-                        <li><a href="sectors">Roads &amp; Highways</a></li>
-                        <li><a href="sectors">Building Construction</a></li>
-                        <li><a href="sectors">Earthworks &amp; Civil Eng.</a></li>
-                        <li><a href="sectors">Water &amp; Drainage</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <ul class="footer-contact">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M12 21s7-6.3 7-11.5A7 7 0 105 9.5C5 14.7 12 21 12 21z" />
-                                <circle cx="12" cy="9.5" r="2.3" />
-                            </svg> AG-0196-3430, 37 Biem Gyamfi Street</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path
-                                    d="M4 4h4l2 5-2.5 1.5a12 12 0 006 6L15 14l5 2v4a2 2 0 01-2 2C9.6 22 2 14.4 2 6a2 2 0 012-2z" />
-                            </svg> +233 24 762 2522 / +233 50 801 1854</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M3 5h18v14H3V5z" />
-                                <path d="M3 6l9 7 9-7" />
-                            </svg> info@sandamanconstructions.com</li>
-                    </ul>
-                </div>
+                <a href="projects" class="btn btn-outline on-dark">View Full Portfolio</a>
             </div>
-            <div class="footer-bottom">
-                <span class="meta">&copy;
-                    <script>
-                        const date = new Date();
-                        const year = date.getFullYear();
-                        document.write(year);
-                    </script> Sandaman Constructions Ltd. &nbsp;·&nbsp; Kumasi, Ghana
-                </span>
-                <div class="footer-social">
-                    <a href="https://www.facebook.com/share/1JJFzLcKzm/?mibextid=wwXIfr" aria-label="Facebook"><svg
-                            width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.6">
-                            <path d="M15 8h2V4h-2a4 4 0 00-4 4v2H9v4h2v6h4v-6h2.5l.5-4H15V8z" />
-                        </svg></a>
-                    <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.6">
-                            <rect x="3" y="9" width="4" height="10" />
-                            <circle cx="5" cy="5" r="1.6" />
-                            <path d="M11 19v-6a3 3 0 016 0v6M11 19V9" />
-                        </svg></a>
-                    <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.6">
-                            <rect x="3" y="3" width="18" height="18" rx="4" />
-                            <circle cx="12" cy="12" r="4" />
-                            <circle cx="17.5" cy="6.5" r="1" />
-                        </svg></a>
-                </div>
+            <div class="project-grid reveal">
+                <?php if (empty($featured_projects)): ?>
+                    <p style="color:var(--steel-light); grid-column: 1/-1;">No featured projects selected yet.</p>
+                <?php else: ?>
+                    <?php foreach ($featured_projects as $fp): ?>
+                        <a href="projects" class="project-card">
+                            <div class="project-media">
+                                <span class="tag"><?= htmlspecialchars($fp['category']) ?></span>
+                                <?php if (!empty($fp['image_url'])): ?>
+                                    <img src="<?= htmlspecialchars($fp['image_url']) ?>" alt="Project Image"
+                                        style="width:100%; height:100%; object-fit:cover;">
+                                <?php else: ?>
+                                    <?php
+                                    $cat = strtolower($fp['category']);
+                                    if (strpos($cat, 'road') !== false) {
+                                        // SVG for Roads
+                                        echo '<svg class="scene-svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                                  <rect width="400" height="300" fill="#1B3A2B"/>
+                                  <path d="M0 300L180 90 400 90 400 300Z" fill="#2F5B41"/>
+                                  <path d="M0 300L150 150 260 150 130 300Z" fill="#3E7554"/>
+                                  <path d="M130 300h270v-40H190z" fill="#F5B700" opacity=".9"/>
+                                  <path d="M180 280h230" stroke="#1B3A2B" stroke-width="3" stroke-dasharray="12 10"/>
+                                </svg>';
+                                    } elseif (strpos($cat, 'water') !== false || strpos($cat, 'drain') !== false) {
+                                        // SVG for Water
+                                        echo '<svg class="scene-svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                                  <rect width="400" height="300" fill="#1B3A2B"/>
+                                  <path d="M0 190q50-30 100 0t100 0 100 0 100 0v110H0z" fill="#2F5B41"/>
+                                  <path d="M0 230q50-24 100 0t100 0 100 0 100 0v70H0z" fill="#3E7554"/>
+                                  <path d="M160 40c22 30 36 52 36 72a36 36 0 01-72 0c0-20 14-42 36-72z" fill="#F5B700" opacity=".85"/>
+                                </svg>';
+                                    } else {
+                                        // Default / Building SVG
+                                        echo '<svg class="scene-svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                                  <rect width="400" height="300" fill="#24503a"/>
+                                  <rect x="70" y="70" width="120" height="230" fill="#2F5B41"/>
+                                  <rect x="210" y="120" width="150" height="180" fill="#3E7554"/>
+                                  <path d="M70 110h120M70 150h120M70 190h120M70 230h120M70 270h120" stroke="#142219" stroke-width="2" opacity=".4"/>
+                                  <path d="M210 160h150M210 200h150M210 240h150M210 280h150" stroke="#142219" stroke-width="2" opacity=".4"/>
+                                  <rect x="90" y="122" width="20" height="24" fill="#F5B700" opacity=".8"/>
+                                  <rect x="130" y="162" width="20" height="24" fill="#F5B700" opacity=".5"/>
+                                  <rect x="240" y="172" width="24" height="24" fill="#F5B700" opacity=".7"/>
+                                </svg>';
+                                    }
+                                    ?>
+                                <?php endif; ?>
+                            </div>
+                            <div class="project-body">
+                                <span class="loc"><?= htmlspecialchars($fp['location'] ?: 'Ghana') ?></span>
+                                <h3><?= htmlspecialchars($fp['title']) ?></h3>
+                                <span class="status"><?= htmlspecialchars($fp['status']) ?></span>
+                            </div>
+                        </a>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <script src="js/main.js?v=2"></script>
-</body>
+    <!-- ============ CTA BAND ============ -->
+    <section class="cta-band">
+        <div class="container">
+            <h2>Starting a New Project?</h2>
+            <a href="contact" class="btn btn-outline">Talk to Our Team <span class="btn-arrow">→</span></a>
+        </div>
+    </section>
+</main>
 
-</html>
+<?php include 'includes/footer.php'; ?>
