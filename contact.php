@@ -115,18 +115,10 @@ include 'includes/header.php';
             </div>
         </section>
 
-        <!-- ============ MAP PLACEHOLDER ============ -->
+        <!-- ============ GOOGLE MAP ============ -->
         <section class="section-tight" style="padding-top:0">
             <div class="container">
-                <div class="map-block">
-                    <div class="map-pin">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 21s7-6.3 7-11.5A7 7 0 105 9.5C5 14.7 12 21 12 21z" />
-                            <circle cx="12" cy="9.5" r="2.3" />
-                        </svg>
-                        <span>Map embed placeholder — Kumasi, Ghana</span>
-                    </div>
-                </div>
+                <iframe src="https://maps.google.com/maps?q=6.659472,-1.709741&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="450" style="border:0; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </section>
     </main>

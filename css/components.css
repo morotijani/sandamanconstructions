@@ -879,3 +879,138 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+/* --- Sector details (sectors page) --- */
+.sector-detail {
+  display: grid;
+  grid-template-columns: 0.9fr 1.4fr;
+  gap: 56px;
+  align-items: start;
+  padding: 56px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.sector-detail:last-child {
+  border-bottom: none;
+}
+
+.sector-detail-icon {
+  width: 56px;
+  height: 56px;
+  color: var(--yellow);
+  background: var(--forest);
+  padding: 14px;
+  border-radius: 6px;
+  margin-bottom: 1.2em;
+}
+
+.sector-detail .idx {
+  font-family: var(--f-mono);
+  color: var(--steel);
+  font-size: .8rem;
+  letter-spacing: .1em;
+}
+
+.capability-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .6em 1.4em;
+  margin-top: 1.4em;
+  padding: 0;
+}
+
+.capability-list li {
+  display: flex;
+  gap: .6em;
+  align-items: flex-start;
+  font-size: .92rem;
+  color: var(--ink);
+}
+
+.capability-list svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  margin-top: 3px;
+  color: var(--forest-3);
+}
+
+@media (max-width:820px) {
+  .sector-detail {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .capability-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Team page specific --- */
+.leader-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+.leader-card .team-photo {
+  margin-bottom: 1.1em;
+}
+
+.leader-card p.bio {
+  font-size: .86rem;
+  margin-top: .6em;
+}
+
+@media (max-width:960px) {
+  .leader-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width:560px) {
+  .leader-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dept-tag {
+  display: inline-block;
+  margin-top: .5em;
+  font-family: var(--f-mono);
+  font-size: .64rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  background: var(--forest);
+  padding: .3em .7em;
+  border-radius: 2px;
+}
+
+.on-forest .dept-tag,
+.on-ink .dept-tag {
+  background: rgba(255, 255, 255, .08);
+}
+
+.join-strip {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 32px;
+  border: 1px dashed var(--line);
+  margin-top: 3rem;
+}
+
+.join-strip h4 {
+  font-family: var(--f-body);
+  text-transform: none;
+  font-size: 1.1rem;
+  margin: 0 0 .3em;
+}
+
+.join-strip p {
+  margin: 0;
+  max-width: 44ch;
+}
